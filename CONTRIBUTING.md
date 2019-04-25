@@ -28,8 +28,8 @@ require it's own developer key.
 Go ahead and download the development viewer which runs the modules and libraries 
 from this project:
 
->[Linux Viewer Download 64-bit](https://drive.google.com/file/d/1CKLtXsfYg29dMvcvEX7M9aOJWuCkwx93/view?usp=sharing)  
->[Windows Viewer Download 64-bit](https://drive.google.com/file/d/1__pfmv5CliUpu7bMNJO_Nen4XnodzaeY/view?usp=sharing)
+>[Linux Viewer Download 64-bit](https://drive.google.com/uc?id=1CKLtXsfYg29dMvcvEX7M9aOJWuCkwx93&export=download)  
+>[Windows Viewer Download 64-bit](https://drive.google.com/uc?id=1__pfmv5CliUpu7bMNJO_Nen4XnodzaeY&export=download)
 
 **Step two:**  
 We will then invite you to our Asana team, once you have joined as a contributor.  

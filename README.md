@@ -49,8 +49,8 @@ get added to the software, so don't expect much in the form of playability durin
 alpha stage!
 
 **Download the ALPHA viewer below!**  
->[Alpha viewer for Linux (64-bit)](https://drive.google.com/file/d/17_SlerOWlgIM1A2FnzzX0HP--t-TMtCW/view?usp=sharing)  
->[Alpha viewer for Windows (64-bit)](https://drive.google.com/file/d/1h6GEnemLLyhcUKzfSOQGE5xFJr8Oa3Tt/view?usp=sharing)
+>[Alpha viewer for Linux (64-bit)](https://drive.google.com/uc?id=17_SlerOWlgIM1A2FnzzX0HP--t-TMtCW&export=download)  
+>[Alpha viewer for Windows (64-bit)](https://drive.google.com/uc?id=1h6GEnemLLyhcUKzfSOQGE5xFJr8Oa3Tt&export=download)
 
 If you get the following message from Windows:
 >Windows Defender SmartScreen prevented an unrecognized app from starting.  
