@@ -1,6 +1,7 @@
 var funcsys = {
-	"ver": "032019.2345",
+	"ver": "042519.0300",
 	"update_summary": {
+		"042519.0300": "Removed references to window.debug.",
 		"032019.2345": "Added optimizer function for auto optimitation.",
 		"031519.1805": "Added debug console function to be called using F4."
 	},
@@ -185,7 +186,7 @@ var funcsys = {
 		When setting up actions, define the function for what it should do
 		then call this function with the function as the second parameter.
 			var func = function(e){
-				if(window.debug) dolog(e.meshUnderPointer.id);
+				dolog(e.meshUnderPointer.id);
 			};
 			actions(mesh2,func);
 		Optionally, the third and fourth parameters can be specified to override
@@ -235,13 +236,13 @@ var funcsys = {
 			window.init.gizmoManager.attachableMeshes.push(obj);
 			window.init.gizmoManager.positionGizmoEnabled=true;
 			window.init.gizmoManager.attachToMesh(obj);
-			if(window.debug) window.funcsys.dolog('[Gizmo] Added Gizmo to: '+obj.id+'.');
+			window.funcsys.dolog('[Gizmo] Added Gizmo to: '+obj.id+'.');
 		} else { //dispose
 			var i = window.init.gizmoManager.attachableMeshes.indexOf(obj);
 			window.init.gizmoManager._attachedMesh=null;
 			//window.init.gizmoManager.attachableMeshes.splice(i,1);
 			window.init.gizmoManager.positionGizmoEnabled=window.init.gizmoManager.rotationGizmoEnabled=window.init.gizmoManager.scaleGizmoEnabled=window.init.gizmoManager.boundingBoxGizmoEnabled=false;
-			if(window.debug) window.funcsys.dolog('[Gizmo] Removed Gizmo from: '+obj.id+'.');
+			window.funcsys.dolog('[Gizmo] Removed Gizmo from: '+obj.id+'.');
 		}
 	},
 	//Label System

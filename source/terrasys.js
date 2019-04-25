@@ -1,6 +1,7 @@
 var terrasys = {
-	"ver": "032019.2230",
+	"ver": "042519.0300",
 	"update_summary": {
+		"042519.0300": "Removed references to window.debug.",
 		"042019.0740": "Removed setcurtile and addtile functions, moved them to tilesys module.",
 		"032019.2230": "Updated window.rezsys.rezit to use window.rezsys.rezfromfile."
 	},
@@ -224,13 +225,13 @@ var terrasys = {
 							if(shad[i].id == tt.id){
 								var theid = tt.id;
 								//window.shadowsys.tsgshadow(theid,0);
-								//if(window.debug) window.funcsys.dolog('[TerraShadow] Removed '+theid);
+								//window.funcsys.dolog('[TerraShadow] Removed '+theid);
 							}
 						}
 					} else {
 						if(shad.filter(function(e){return e.id === tt.id}).length < 1){
 							//if(window.tshadows) window.shadowsys.tsgshadow(tt.id,1);
-							//if(window.debug) window.funcsys.dolog('[TerraShadow] Added '+tt.id);
+							//window.funcsys.dolog('[TerraShadow] Added '+tt.id);
 						}
 					}
 					if(!window.tshadows){
@@ -505,7 +506,7 @@ var terrasys = {
 			}
 			if(callback) callback();
 		} else {
-			if(window.debug) window.funcsys.dolog('[Save Tile Error] No tile ID specified!');
+			window.funcsys.dolog('[Save Tile Error] No tile ID specified!');
 		}
 	}
 };

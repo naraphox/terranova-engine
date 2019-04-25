@@ -1,6 +1,7 @@
 var watersys = {
-	"ver": "013119.1453",
+	"ver": "042519.0300",
 	"update_summary": {
+		"042519.0300": "Removed references to window.debug.",
 		"021019.1825": ""
 	},
 	"waterit": function(id,t){
@@ -44,7 +45,7 @@ var watersys = {
 										window.watermat.getRenderList().splice(i, 1);
 									}
 								});
-								if(window.debug) window.funcsys.dolog("[WaterSys] Removed "+val.id);
+								window.funcsys.dolog("[WaterSys] Removed "+val.id);
 							}
 						}
 						//terrain
@@ -59,12 +60,12 @@ var watersys = {
 										window.watermat.getRenderList().splice(i, 1);
 									}
 								});
-								if(window.debug) window.funcsys.dolog("[WaterSys] Removed "+val.id);
+								window.funcsys.dolog("[WaterSys] Removed "+val.id);
 							}
 						}
 					}
 				});
-			} catch(e){if(window.debug) window.funcsys.dolog("[WaterSys C1] Error: "+e);}
+			} catch(e){window.funcsys.dolog("[WaterSys C1] Error: "+e);}
 
 			//add objects
 			try{
@@ -77,7 +78,7 @@ var watersys = {
 						var result = $.grep(w, function(e){ return e.id == vv.id; });
 						if(result.length === 0){ //not already in water list
 							window.watersys.waterit(vv.id,1);
-							if(window.debug) window.funcsys.dolog("[WaterSys] Added "+vv.id);
+							window.funcsys.dolog("[WaterSys] Added "+vv.id);
 						}
 					}
 					//terrain
@@ -85,12 +86,12 @@ var watersys = {
 						var result = $.grep(w, function(e){ return e.id == vv.id; });
 						if(result.length === 0){ //not already in water list
 							window.watersys.waterit(vv.id,1);
-							if(window.debug) window.funcsys.dolog("[WaterSys] Added "+vv.id);
+							window.funcsys.dolog("[WaterSys] Added "+vv.id);
 						}
 					}
 				});
-			} catch(e){if(window.debug) window.funcsys.dolog("[WaterSys C2] Error: "+e);}
-		} catch(e){if(window.debug) window.funcsys.dolog("[WaterSys C3] Error: "+e);}
+			} catch(e){window.funcsys.dolog("[WaterSys C2] Error: "+e);}
+		} catch(e){window.funcsys.dolog("[WaterSys C3] Error: "+e);}
 	}
 };
 window.console.log('[WaterSys] Loaded.');

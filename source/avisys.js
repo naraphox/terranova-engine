@@ -1,7 +1,7 @@
 var avisys = {
-	"ver": "020619.1815",
+	"ver": "042519.0300",
 	"update_summary": {
-		"021019.1825": ""
+		"042519.0300": "Removed references to window.debug."
 	},
 	//Add Player
 	"addactor": function(rid,dname,muuid){ //muuid = mesh uuid to load
@@ -101,7 +101,7 @@ var avisys = {
 				actor.parent=actor.phys;
 				//actions
 				var func = function(e){
-					if(window.debug) window.funcsys.dolog(e.sourceEvent.button);
+					window.funcsys.dolog(e.sourceEvent.button);
 				};
 				window.funcsys.actions(actor.phys,func);
 				//finalize

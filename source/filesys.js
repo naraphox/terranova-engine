@@ -1,6 +1,7 @@
 var filesys = {
-	"ver": "022519.0110",
+	"ver": "042519.0300",
 	"update_summary": {
+		"042519.0300": "Removed references to window.debug.",
 		"022519.0110": "Minor code revisions."
 	},
 	//Direct Storage System
@@ -47,20 +48,20 @@ var filesys = {
 			fs.root.getFile(dir+file, {create: true}, function(fe){
 				fe.createWriter(function(fw){
 					fw.onwriteend = function(e){
-						if(window.debug) window.funcsys.dolog('[Saved File] '+fe.name);
+						window.funcsys.dolog('[Saved File] '+fe.name);
 					};
 					fw.onerror = function(e){
-						if(window.debug) window.funcsys.dolog('[Write Failed] '+e.toString());
+						window.funcsys.dolog('[Write Failed] '+e.toString());
 					};
 					var blob = new Blob([contents], {type: 'text/plain'});
 					fw.write(blob);
-				}, function(e){if(window.debug) window.funcsys.dolog('[File Writer Failed] '+e.toString());});
-			}, function(e){if(window.debug) window.funcsys.dolog('[Get File Failed] '+e.toString());});
-		}, function(e){if(window.debug) window.funcsys.dolog('[Directory Error] '+e.toString());});
+				}, function(e){window.funcsys.dolog('[File Writer Failed] '+e.toString());});
+			}, function(e){window.funcsys.dolog('[Get File Failed] '+e.toString());});
+		}, function(e){window.funcsys.dolog('[Directory Error] '+e.toString());});
 	},
 	"readfile": function(file,dir,callback){
 		if(!callback){
-			if(window.debug) window.funcsys.dolog('[Read File] Callback required!');
+			window.funcsys.dolog('[Read File] Callback required!');
 			return false;
 		}
 		if(!dir) dir = '/';
@@ -83,20 +84,20 @@ var filesys = {
 		if(dir.slice(-1) != '/') dir+='/'; //must end with /
 		fs.root.getFile(dir+file, {create: false}, function(fe){
 			fe.remove(function(){
-				if(window.debug) window.funcsys.dolog('[File Removed] '+fe.name);
+				window.funcsys.dolog('[File Removed] '+fe.name);
 			}, function(e){
-				if(window.debug) window.funcsys.dolog('[Delete Failed] '+e.toString());
+				window.funcsys.dolog('[Delete Failed] '+e.toString());
 			});
 		}, function(e){
-			if(window.debug) window.funcsys.dolog('[Get File Failed] '+e.toString());
+			window.funcsys.dolog('[Get File Failed] '+e.toString());
 		});
 		//Try to remove directory if empty if not root
 		if(dir != '/'){
 			fs.root.getDirectory(dir, {}, function(de){
 				de.remove(function(){
-					if(window.debug) window.funcsys.dolog('[Directory Deleted] '+de.name);
+					window.funcsys.dolog('[Directory Deleted] '+de.name);
 				},function(e){
-					if(window.debug) window.funcsys.dolog('[Directory Delete Error] '+e.toString());
+					window.funcsys.dolog('[Directory Delete Error] '+e.toString());
 				});
 			});
 		}
@@ -115,7 +116,7 @@ var filesys = {
 					readEntries();
 				  }
 				}, function(e){
-					if(window.debug) window.funcsys.dolog('');
+					window.funcsys.dolog('');
 				});
 			};
 			readEntries();

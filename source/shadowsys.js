@@ -1,7 +1,7 @@
 var shadowsys = {
-	"ver": "013119.1453",
+	"ver": "042519.0300",
 	"update_summary": {
-		"021019.1825": ""
+		"042519.0300": "Removed references to window.debug."
 	},
 	//recieve shadows
 	"shadowR": function(id,t){
@@ -47,7 +47,7 @@ var shadowsys = {
 				var result = $.grep(shad, function(e){ return e.id == themesh.id; });
 				if(result.length > 0){ //found mesh in shadow list, so remove it
 					window.shadowsys.sgshadow(themesh.id,0);
-					if(window.debug) window.funcsys.dolog('[ObjShadow] Removed '+themesh.id);
+					window.funcsys.dolog('[ObjShadow] Removed '+themesh.id);
 				}
 			}
 		}
@@ -61,7 +61,7 @@ var shadowsys = {
 				var result = $.grep(shad, function(e){ return e.id == themesh.id; });
 				if(result.length == 0){ //not found in shadows list
 					window.shadowsys.sgshadow(themesh.id,1);
-					if(window.debug) window.funcsys.dolog('[ObjShadow] Added '+themesh.id);
+					window.funcsys.dolog('[ObjShadow] Added '+themesh.id);
 				}
 			}
 		}
