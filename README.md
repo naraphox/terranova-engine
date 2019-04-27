@@ -12,6 +12,14 @@ Werescape is cross-platform and runs on Linux and Windows and eventually Mac OS!
 
 **Please excuse the mess while we get setup here on GitHub!**
 
+## Important Updates
+These are updates and important notices regarding the project that need immediate 
+attention.
+>The Windows Alpha download was missing the player folder which contains the player 
+model, this would have caused the viewer to not render the scene correctly as it 
+produced a critical error while loading, if your viewer isn't working correctly please 
+re-download it!
+
 ## General Project Description
 I developed Terranova Engine to be modular and scalable in nature so that people can 
 easily work with it for the sake of the project and to be able to use for their own game 
