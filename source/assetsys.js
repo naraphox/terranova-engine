@@ -18,7 +18,7 @@ var assetsys = {
 			window.assetsys.asset_list(tile,alist);
 		});
 		socket.on('asset', (a) => { //incoming asset from universe, base64 encoded
-			let asset = atob(a);
+			let asset = window.base64.decode(a);
 			window.rezsys.rezfromdata(asset);
 		});
 	},

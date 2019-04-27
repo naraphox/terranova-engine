@@ -120,14 +120,14 @@ var comms = {
 				new window.Noty({
 					type: 'alert',
 					queue: 'chat',
-					text: '<b>'+dname+':</b> '+libbase64.decode(msg).toString(),
+					text: '<b>'+dname+':</b> '+window.base64.decode(msg),
 					container: '.chatlog',
 					closeWith: []
 				}).show();
 				new window.Noty({
 					type: 'alert',
 					queue: 'chat2',
-					text: '<b>'+dname+':</b> '+libbase64.decode(msg).toString(),
+					text: '<b>'+dname+':</b> '+window.base64.decode(msg),
 					container: '.tempchat',
 					timeout: 5000,
 					progressBar: false
@@ -212,12 +212,12 @@ var comms = {
 					case "2": //remote peer asking for an asset
 						var aid = json.a;
 						window.assetsys.get_asset(aid, (d) => {
-							var msg = '{"o":"0", "s":"3", "cid":"'+window.uid+'", "d":"'+btoa(d)+'"}';
+							var msg = '{"o":"0", "s":"3", "cid":"'+window.uid+'", "d":"'+window.base64.encode(d)+'"}';
 							window.comms.send(cid,msg);
 						});
 					break;
 					case "3": //response from remote peer with actual asset
-						var d = atob(json.d);
+						var d = window.base64.encode(json.d);
 						window.rezsys.rezfromdata(d);
 					break;
 				}
@@ -312,7 +312,7 @@ var comms = {
 			digest = digest.concat(window.radar['25m']);
 		}
 		if(digest.length==0) digest = 0;
-		var data = '{"op":"chat", "data": "'+libbase64.encode(msg)+'"}';
+		var data = '{"op":"chat", "data": "'+window.base64.encode(msg)+'"}';
 		socket.emit('chat',rid,data,digest,window.displayname);
 		new window.Noty({
 			type: 'alert',

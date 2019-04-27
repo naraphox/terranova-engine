@@ -9,7 +9,7 @@ var filesys = {
 		var d;
 		dfs.readFile(file,"utf8",function(error,data){
 			//decode
-			if(en) d = window.atob(data);
+			if(en) d = window.base64.decode(data);
 			else d = data;
 			//decrypt
 			if(enc) d = window.cryptsys.decrypt(d);
@@ -23,7 +23,7 @@ var filesys = {
 		if(enc) d = window.cryptsys.encrypt(data);
 		else d = data;
 		//encode
-		if(en) d = window.btoa(d);
+		if(en) d = window.base64.encode(d);
 		//write the file
 		if(bin){ //binary
 			var stream = dfs.createWriteStream(file);
